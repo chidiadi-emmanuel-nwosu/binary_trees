@@ -1,10 +1,10 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_is_full - checks if a binary tree is full
- * @tree: pointer to the root node of the tree to check
+ * binary_tree_sibling - find the sibling of a node
+ * @node: pointer to the node to find the sibling
  *
- * Return: 1 if the tree is full. 0 otherwise
+ * Return: pointer to the sibling node
  */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
