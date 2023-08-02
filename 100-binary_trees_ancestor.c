@@ -12,27 +12,20 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 {
 	binary_tree_t *_first, *_second;
 
-	if (!first || !second)
-		return (NULL);
-
-	if (!first->parent && !second->parent)
-		return (NULL);
-
 	_first = (binary_tree_t *)first;
 	_second = (binary_tree_t *)second;
 
-	while (_first)
-	{
+	if ((!first || !second) || (!first->parent && !second->parent))
+		return (NULL);
+
+	for (; _first; _first = _first->parent)
 		if (node_is_present(_first, _second))
 			return (_first);
-		_first = _first->parent;
-	}
-	while (_second)
-	{
+
+	for (; _second; _second = _second->parent)
 		if (node_is_present(_second, _first))
 			return (_second);
-		_second = _second->parent;
-	}
+
 	return (NULL);
 }
 
