@@ -71,6 +71,6 @@ int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
 /*************aux***********/
 size_t check_nodes(const binary_tree_t *tree);
-size_t power(size_t, size_t);
+int node_is_present(const binary_tree_t *root, const binary_tree_t *node);
 
 #endif /* _BINARY_TREES_H_ */
